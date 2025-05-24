@@ -7,6 +7,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Net.Mail;
+using System.Net;
 
 namespace Hospital_Administration_System.Web_Forms.AppointmentDetails
 {
@@ -33,12 +35,6 @@ namespace Hospital_Administration_System.Web_Forms.AppointmentDetails
                 lblErrorPills.Visible = true;
                 return;
             }
-            //int.TryParse(txtIntake.Text, out int intake);
-            //if ( intake < 0 || intake > 10)
-            //{
-            //    lblErrorPills.Visible = true;
-            //    return;
-            //}
             lblErrorPills.Visible = false;
 
             string id = Request.QueryString["appid"];
@@ -60,6 +56,46 @@ namespace Hospital_Administration_System.Web_Forms.AppointmentDetails
                     comm.ExecuteNonQuery();
                     cnn.Close(); //close connection
 
+                    // Get patient email from appointment (for future use)
+                    string patientEmail = "";
+                    using (SqlConnection conn = new SqlConnection(connectionstring))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(
+                            "SELECT u.email FROM Appointments a JOIN Users u ON a.User_ID = u.User_ID WHERE a.AppID = @appid", conn))
+                        {
+                            cmd.Parameters.AddWithValue("@appid", id);
+                            var result = cmd.ExecuteScalar();
+                            if (result != null)
+                                patientEmail = result.ToString();
+                        }
+                    }
+
+                    // Always send to your test email for now
+                    patientEmail = "sanelemthembu153@gmail.com";
+
+                    // Send email if email found (using Web.config settings)
+                    if (!string.IsNullOrEmpty(patientEmail))
+                    {
+                        try
+                        {
+                            MailMessage mail = new MailMessage();
+                            mail.From = new MailAddress("sanelemthembu153@gmail.com", "MediConnect");
+                            mail.To.Add(patientEmail);
+                            mail.Subject = "Your Prescription is Ready";
+                            mail.Body = "Dear Patient,\n\nA new prescription has been added to your account. Please log in to view the details.\n\nBest regards,\nMediConnect Team";
+                            mail.IsBodyHtml = false;
+
+                            using (SmtpClient smtp = new SmtpClient())
+                            {
+                                smtp.Send(mail); // Uses Web.config settings
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            ClientScript.RegisterStartupScript(this.GetType(), "myalert", $"alert('Email error: {ex.Message}');", true);
+                        }
+                    }
 
                     LoadAppointments(id);
                     ClientScript.RegisterStartupScript(this.GetType(), "alert",

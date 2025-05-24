@@ -24,11 +24,11 @@ namespace Hospital_Administration_System.Web_Forms
                 {
                     if (HasPendingEmergency())
                     {
-                        emergencyAlertBtn.Visible = true;
+                        //emergencyAlertBtn.Visible = true;
                     }
                     else
                     {
-                        emergencyAlertBtn.Visible = false;
+                       // emergencyAlertBtn.Visible = false;
                     }
                     
                 }
