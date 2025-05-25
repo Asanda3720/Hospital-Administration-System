@@ -35,6 +35,12 @@ namespace Hospital_Administration_System.Web_Forms.AppointmentDetails
                 lblErrorPills.Visible = true;
                 return;
             }
+            //int.TryParse(txtIntake.Text, out int intake);
+            //if ( intake < 0 || intake > 10)
+            //{
+            //    lblErrorPills.Visible = true;
+            //    return;
+            //}
             lblErrorPills.Visible = false;
 
             string id = Request.QueryString["appid"];

@@ -522,7 +522,7 @@ body, html {
     overflow-y: auto;
     padding: 10px;
     background: #f9f9f9;
-}
+        }
 
 .chat-user-msg, .chat-bot-msg {
     max-width: 80%;
@@ -570,9 +570,7 @@ body, html {
     </style>
 </head>
 <body>
-    <form id="form2" runat="server">
         <!-- Emergency Alert Button -->
-        <button id="Button1" runat="server" type="button" class="emergency-alert-btn" onclick="playEmergencySound()">
             <i class="fas fa-exclamation-triangle"></i> EMERGENCY ALERT
         </button>
         
@@ -803,7 +801,7 @@ body, html {
                 if (userCookie != null && userCookie["userType"] == "5") 
                 { 
             %>
-            document.getElementById('emergencyAlertBtn').style.display = 'block';
+                document.getElementById('emergencyAlertBtn').style.display = 'block';
             <% } %>
         };
 
