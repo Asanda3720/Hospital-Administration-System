@@ -30,34 +30,16 @@ namespace Hospital_Administration_System.Web_Forms.Meal
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblErrorMeal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lblErrorMeal;
 
         /// <summary>
-        /// drdBreakfast control.
+        /// selectedMeals control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drdBreakfast;
-
-        /// <summary>
-        /// drdLunch control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drdLunch;
-
-        /// <summary>
-        /// drdDinner control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drdDinner;
+        protected global::System.Web.UI.WebControls.HiddenField selectedMeals;
 
         /// <summary>
         /// btnConfirm control.

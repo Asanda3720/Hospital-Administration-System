@@ -18,7 +18,7 @@ namespace Hospital_Administration_System.Web_Forms.Meal
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (drdBreakfast.SelectedIndex != 0 || drdLunch.SelectedIndex != 0 || drdDinner.SelectedIndex != 0)
+           /* if (drdBreakfast.SelectedIndex != 0 || drdLunch.SelectedIndex != 0 || drdDinner.SelectedIndex != 0)
             {
                 lblErrorMeal.Visible = false;
                 //string breakfast = null, lunch = null, dinner = null;
@@ -91,7 +91,7 @@ namespace Hospital_Administration_System.Web_Forms.Meal
             else
             {
                 lblErrorMeal.Visible = true;
-            }
+            }*/
         }
     }
 }

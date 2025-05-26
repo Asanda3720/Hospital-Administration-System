@@ -18,16 +18,15 @@ namespace Hospital_Administration_System.Web_Forms.Payment
         {
             if (!IsPostBack)
             {
-                HttpCookie paymentCookieRetriever = Request.Cookies["paymentInfo"];
-                if (paymentCookieRetriever != null && paymentCookieRetriever["totalAmount"] != null)
+                string total = Request.QueryString["total"];
+                if (!string.IsNullOrEmpty(total))
                 {
-                    if (decimal.TryParse(paymentCookieRetriever["totalAmount"], out decimal totAmount))
-                    {
-                        amount.Text = totAmount.ToString("0.00");
-                    }
+                    amount.Text = total; // Assign to the TextBox
                 }
             }
         }
+
+
 
         [WebMethod]
         public static object CreatePaymentIntent(string amount)

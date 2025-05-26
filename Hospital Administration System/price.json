@@ -1,0 +1,27 @@
+{
+  "CurrentPrice": 0,
+  "Breakfast": [
+    {
+      "Name": "Potatoes and Chips",
+      "Price": 60,
+      "ImageUrl": "images/potatoes.jpg"
+    },
+    {
+      "Name": "Burger",
+      "Price": 60,
+      "ImageUrl": "images/burger.jpg"
+    }
+  ],
+  "Lunch": [
+    {
+      "Name": "Veg and Soup",
+      "Price": 30,
+      "ImageUrl": "images/veg.jpg"
+    },
+    {
+      "Name": "Fruits",
+      "Price": 30,
+      "ImageUrl": "images/fruits.jpg"
+    }
+  ]
+}

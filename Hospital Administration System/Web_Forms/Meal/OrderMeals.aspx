@@ -113,14 +113,65 @@
             color: var(--primary-color);
         }
 
-        .meal-section {
-            margin-bottom: 1.5rem;
-        }
+.meal-section-div {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Spacing between items */
+    margin-bottom: 1.5rem;
+}
 
-        .meal-section h4 {
-            color: var(--secondary-color);
-            margin-bottom: 0.5rem;
-        }
+.meal-section h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.meal-section-div {
+    display: flex;
+    /*flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 1rem; /* Spacing between items */
+    margin-bottom: 1.5rem;
+}
+
+.meal-section h4 {
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
+}
+
+.meal-section-div-title {
+    display: flex;
+    flex-direction: column; /* Stack name & price vertically */
+    justify-content: center;
+    font-weight: bold;
+}
+
+.meal-section {
+    display: flex;
+    /**/flex-direction: row;*/
+    align-items: center;
+    gap: 16px;
+    background-color: red; /* You can change this to a lighter tone */
+    /*width: 28%;*/
+    min-width: 250px; /* Ensures a reasonable min width */
+    height: 150px; /* Adjust as needed */
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.meal-section:hover {
+    transform: scale(1.03);
+    background-color: #f2f2f2;
+}
+
+.meal-section-div-img img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
 
         .form-control {
             width: 100%;
@@ -138,7 +189,7 @@
         }
 
         .btn-order {
-            background-color: var(--primary-color);
+            background-color:  #2a9d8f;
             color: white;
             border: none;
             padding: 0.75rem 1.5rem;
@@ -158,6 +209,30 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
+        .meal-section.selected {
+    border-color: #007bff;
+    background-color: #e0f0ff;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.total-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.meal-section-div {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
 
         /* Footer Styles */
         .footer {
@@ -207,6 +282,177 @@
                 margin: 1rem;
             }
         }
+        .meal-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.meal-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+h4 {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #444;
+}
+
+.meal-section-div {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #999 #eee;
+}
+
+.meal-section-div::-webkit-scrollbar {
+    height: 8px;
+}
+
+.meal-section-div::-webkit-scrollbar-track {
+    background: #eee;
+    border-radius: 10px;
+}
+
+.meal-section-div::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.meal-section {
+    min-width: 250px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    background-color: #f8f8f8;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.meal-section:hover {
+    transform: scale(1.03);
+    background-color: #f0f0f0;
+}
+
+.meal-section-div-img img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.meal-section-div-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.btn-order {
+    margin-top: 20px;
+    background-color:var(--secondary-color);
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-order:hover {
+    opacity:80%;
+
+}
+.meal-section.selected {
+    border-color: var(--secondary-color);
+    background-color: #e0f0ff;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.total-display {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.meal-section-div {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+.meal-section-div {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    gap: 1rem;
+    padding: 10px 0;
+    scroll-behavior: smooth;
+}
+
+.meal-section-div::-webkit-scrollbar {
+    height: 8px;
+}
+
+.meal-section-div::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+.meal-section {
+    flex: 0 0 auto;
+    width: 250px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    transition: transform 0.2s;
+}
+
+.meal-section:hover {
+    transform: scale(1.03);
+    background-color: #eef6ff;
+}
+
+.meal-section-div-img img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.meal-section-div-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+    font-weight: bold;
+}
+.meal-section-div {
+    max-width: 100%; /* or 900px */
+}
+
+
     </style>
 </head>
 <body>
@@ -274,47 +520,139 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
+<!-- Main Content -->
+<!-- Main Content -->
+<form id="form1" runat="server">
     <div class="meal-container">
         <h1 class="meal-title">Order <span>Meals</span></h1>
+
+        <h4 id="lblErrorMeal" runat="server" visible="false" style="color: red;">At least 1 meal must be chosen!</h4>
+
+        <!-- BREAKFAST -->
+        <h4>For Breakfast:</h4>
+        <div class="meal-section-div scroll-x">
+            <div class="meal-section" data-price="50" data-name="Eggs and Toast">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/pics/breakfast/EggswithToast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Eggs and Toast</div>
+                    <div>R50</div>
+                </div>
+            </div>
+
+            <div class="meal-section" data-price="70" data-name="Oats & Fruit">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/pics/breakfast/EggswithToast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Oats & Fruit</div>
+                    <div>R70</div>
+                </div>
+            </div>
+
+            <div class="meal-section" data-price="85" data-name="Pancakes">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/pics/breakfast/Toast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Pancakes</div>
+                    <div>R85</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LUNCH -->
+        <h4>For Lunch:</h4>
+        <div class="meal-section-div scroll-x">
+            <div class="meal-section" data-price="120" data-name="Grilled Chicken">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/images/Lunch/WhatsApp Image 2025-05-24 at 18.35.08.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Grilled Chicken</div>
+                    <div>R120</div>
+                </div>
+            </div>
+
+            <div class="meal-section" data-price="95" data-name="Veggie Bowl">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/images/Lunch/WhatsApp Image 2025-05-24 at 18.35.08.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Veggie Bowl</div>
+                    <div>R95</div>
+                </div>
+            </div>
+
         
-        <form id="form1" runat="server">
-            <div class="meal-section">
-                <h4>
-                    <asp:Label ID="lblErrorMeal" runat="server" CssClass="form-control" ForeColor="Red" Text="At least 1 meal must be chosen!" Visible="False"></asp:Label>
-                </h4>
-                <h4>For Breakfast:</h4>
-                <asp:DropDownList ID="drdBreakfast" runat="server" CssClass="form-control">
-                    <asp:ListItem>--Select Breakfast--</asp:ListItem>
-                    <asp:ListItem>Porridge</asp:ListItem>
-                    <asp:ListItem>Eggs and Toast</asp:ListItem>
-                    <asp:ListItem>Cereal with Milk</asp:ListItem>
-                </asp:DropDownList>
+            <div class="meal-section" data-price="110" data-name="Beef Wraps">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/pics/breakfast/EggswithToast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Beef Wraps</div>
+                    <div>R110</div>
+                </div>
             </div>
-            
-            <div class="meal-section">
-                <h4>For Lunch:</h4>
-                <asp:DropDownList ID="drdLunch" runat="server" CssClass="form-control">
-                    <asp:ListItem>--Select Lunch--</asp:ListItem>
-                    <asp:ListItem>Sandwhiches/Wraps</asp:ListItem>
-                    <asp:ListItem>Greek Salad</asp:ListItem>
-                    <asp:ListItem>Pasta</asp:ListItem>
-                </asp:DropDownList>
+        </div>
+        
+        <!-- DINNER -->
+        <h4>For Evening:</h4>
+        <div class="meal-section-div scroll-x">
+            <div class="meal-section" data-price="100" data-name="Pasta">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/images/Breakfast/EggswithToast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Pasta</div>
+                    <div>R100</div>
+                </div>
             </div>
-            
-            <div class="meal-section">
-                <h4>For Evening:</h4>
-                <asp:DropDownList ID="drdDinner" runat="server" CssClass="form-control">
-                    <asp:ListItem>--Select Dinner--</asp:ListItem>
-                    <asp:ListItem>Roasted Beef with mashed potatoes</asp:ListItem>
-                    <asp:ListItem>Roasted Chicken with mashed potatoes</asp:ListItem>
-                    <asp:ListItem>Stir-fried Vegetables with Rice</asp:ListItem>
-                </asp:DropDownList>
-            </div>
-            
-            <asp:Button ID="btnConfirm" runat="server" Text="Order Meals" CssClass="btn-order" OnClick="btnConfirm_Click" />
-        </form>
+             <div class="meal-section" data-price="130" data-name="Grilled Fish">
+     <div class="meal-section-div-img">
+         <img src="/Web_Forms/Meal/images/Supper/roast-beef-with-mashed-potatoes.jpeg" />
+     </div>
+     <div class="meal-section-div-title">
+         <div>Grilled Fish</div>
+         <div>R130</div>
+     </div>
     </div>
+
+            <div class="meal-section" data-price="95" data-name="Chicken Salad">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/images/Breakfast/roast chicken with mashed potato.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Chicken Mash</div>
+                    <div>R95</div>
+                </div>
+            </div>
+              <div class="meal-section" data-price="55" data-name="Chicken Salad">
+                <div class="meal-section-div-img">
+                    <img src="/Web_Forms/Meal/images/Breakfast/EggswithToast.jpeg" />
+                </div>
+                <div class="meal-section-div-title">
+                    <div>Chicken Salad</div>
+                    <div>R55</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Total & Submit -->
+        <div class="form-footer">
+            <asp:HiddenField ID="selectedMeals" runat="server" />
+            <span class="total-display">Total: R<span id="totalAmount">0</span></span>
+            <asp:Button ID="btnConfirm" runat="server" Text="Order Meals" CssClass="btn-order" OnClick="btnConfirm_Click" />
+            <input type="hidden" id="totalAmountInput" name="totalAmountInput" />
+        </div>
+    </div>
+</form>
+
+
+
+
+
 
     <!-- Footer -->
     <footer class="footer">
@@ -337,6 +675,30 @@
             </div>
         </div>
     </footer>
+
+    <script type="text/javascript">
+        let total = 0;
+
+        document.querySelectorAll(".meal-section").forEach(card => {
+            card.addEventListener("click", () => {
+                card.classList.toggle("selected");
+
+                // Recalculate total
+                const selectedCards = document.querySelectorAll(".meal-section.selected");
+                total = 0;
+                selectedCards.forEach(item => {
+                    total += parseInt(item.getAttribute("data-price") || 0);
+                });
+
+                // Set hidden field value and update UI
+                document.getElementById("totalAmountInput").value = total;
+                document.getElementById("total-display").innerText = "Total: R" + total;
+            });
+        });
+    </script>
+
+
+
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

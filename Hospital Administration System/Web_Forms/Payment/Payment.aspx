@@ -366,9 +366,8 @@
                 </div>
             </div>
             
-            <!-- Hidden button for server-side processing -->
-            <asp:Button ID="Button1" runat="server" OnClick="btnSubmit_Click" style="display: none;" />
-        </div>
+ <!-- Hidden button for server-side processing -->
+ <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" style="display: none;" />        </div>
 
         <!-- Footer -->
         <footer class="footer">
@@ -503,7 +502,6 @@
         });
     </script>
     
-    <!-- Hidden button for server-side processing -->
-    <asp:Button ID="btnSubmit" runat="server" OnClick="btnSubmit_Click" style="display: none;" />
+   
 </body>
 </html>

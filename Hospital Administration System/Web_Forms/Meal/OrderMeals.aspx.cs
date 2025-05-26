@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,26 +17,36 @@ namespace Hospital_Administration_System.Web_Forms.Meal
 
         protected void btnConfirm_Click(object sender, EventArgs e)
         {
+            string selectedJson = selectedMeals.Value;
+            string total = Request.Form["totalAmountInput"];
 
-            HttpCookie mealCookie = new HttpCookie("mealInfo"); //store cookie
-            mealCookie["breakfast"] = null; mealCookie["lunch"] = null; mealCookie["dinner"] = null;
-            if (drdBreakfast.SelectedIndex != 0 || drdLunch.SelectedIndex != 0 || drdDinner.SelectedIndex != 0)
-            {
-                lblErrorMeal.Visible = false;
-                if (drdBreakfast.SelectedIndex != 0)
-                    mealCookie["breakfast"] = drdBreakfast.SelectedValue.ToString();
-                if (drdLunch.SelectedIndex != 0)
-                    mealCookie["lunch"] = drdLunch.SelectedValue.ToString();
-                if (drdDinner.SelectedIndex != 0)
-                    mealCookie["dinner"] = drdDinner.SelectedValue.ToString();
-                Response.Cookies.Add(mealCookie);
-                Response.Redirect($"/Web_Forms/Meal/ConfirmMeals.aspx");
-            }
-            else
+            if (string.IsNullOrWhiteSpace(selectedJson) || selectedJson == "[]")
             {
                 lblErrorMeal.Visible = true;
+                return;
             }
 
+            lblErrorMeal.Visible = false;
+
+            // Deserialize if needed
+            var selected = JsonConvert.DeserializeObject<List<MealItem>>(selectedJson);
+
+            // Example: Show names and total price (you can save to DB or process further)
+            string summary = "You ordered: " + string.Join(", ", selected.Select(m => m.name)) +
+                             ". Total: R" + selected.Sum(m => m.price);
+
+            // You can display this in a Label or store in DB
+            Response.Write("<script>alert('" + summary + "');</script>");
+            Response.Redirect($"/Web_Forms/Payment/Payment.aspx?total={total}");
         }
+
+        public class MealItem
+        {
+            public string name { get; set; }
+            public int price { get; set; }
+        }
+
+
+
     }
 }
